@@ -76,7 +76,7 @@ a:hover {
 .cover {
     border-color: #212121;
     border-style: solid;
-    border-width: 3px;
+    border-width: 0px;
     border-radius: 20px;
     padding: 5%;
     margin: 5px;
@@ -96,7 +96,8 @@ input {
     border-right: none;
     background: transparent;
     color: #ffffff;
-    padding: 7px;
+    padding-left: 9px;
+    padding-right: 9px;
     outline: none;
 
 }
@@ -109,6 +110,7 @@ label {
     color: #ffffff;
     padding: 3px;
     float: left;
+    margin-top: 5%;
 }
 
 button {
