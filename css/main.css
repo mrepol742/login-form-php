@@ -132,3 +132,15 @@ button {
 #forgotPassword {
     background-color:  #de5246;
 }
+
+@media (max-width:1080px) {
+
+    .cover {
+        padding: 15%;
+    }
+}
+
+#login {
+    color: #ffffff;
+    text-shadow: 0px 0px 7px rgba(150, 150, 150, 1);
+}
