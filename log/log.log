@@ -1,0 +1,18 @@
+"file:/usr/local/lib/python3.10/idlelib/help.html":979.5-979.42: error: Duplicate ID "cpython-language-and-version".
+"file:/github/workspace/login.html":13.5-13.11: error: Element "head" is missing a required instance of child element "title".
+"file:/github/workspace/login.html":27.17-27.30: error: Bad value "" for attribute "id" on element "button": An ID must not be the empty string.
+"file:/github/workspace/css/main.css":85.30-85.30: error: CSS: "backdrop-filter": Property "backdrop-filter" doesn't exist.
+"file:/github/workspace/assets/bootstrap.min.css":6.1971-6.1974: error: CSS: "text-decoration-skip-ink": Property "text-decoration-skip-ink" doesn't exist.
+"file:/github/workspace/assets/bootstrap.min.css":6.4710-6.4729: error: CSS: Unknown pseudo-element or pseudo-class "::file-selector-button".
+"file:/github/workspace/assets/bootstrap.min.css":6.23091-6.23110: error: CSS: Unknown pseudo-element or pseudo-class "::file-selector-button".
+"file:/github/workspace/assets/bootstrap.min.css":6.23548-6.23567: error: CSS: Unknown pseudo-element or pseudo-class "::file-selector-button".
+"file:/github/workspace/assets/bootstrap.min.css":6.23638-6.23657: error: CSS: Unknown pseudo-element or pseudo-class "::file-selector-button".
+"file:/github/workspace/assets/bootstrap.min.css":6.23817-6.23822: error: CSS: "margin-inline-end": Property "margin-inline-end" doesn't exist.
+"file:/github/workspace/assets/bootstrap.min.css":6.23962-6.23964: error: CSS: "border-inline-end-width": Property "border-inline-end-width" doesn't exist.
+"file:/github/workspace/assets/bootstrap.min.css":6.24898-6.24917: error: CSS: Unknown pseudo-element or pseudo-class "::file-selector-button".
+"file:/github/workspace/assets/bootstrap.min.css":6.25142-6.25146: error: CSS: "margin-inline-end": Property "margin-inline-end" doesn't exist.
+"file:/github/workspace/assets/bootstrap.min.css":6.25278-6.25297: error: CSS: Unknown pseudo-element or pseudo-class "::file-selector-button".
+"file:/github/workspace/assets/bootstrap.min.css":6.25511-6.25514: error: CSS: "margin-inline-end": Property "margin-inline-end" doesn't exist.
+"file:/github/workspace/assets/bootstrap.min.css":6.27723-6.27727: error: CSS: "color-adjust": Property "color-adjust" doesn't exist.
+"file:/github/workspace/assets/bootstrap.min.css":6.73532-6.73535: error: CSS: "overflow-anchor": Property "overflow-anchor" doesn't exist.
+"file:/github/workspace/assets/bootstrap.min.css":0.0-0.0: error: CSS: The value "break-word" is deprecated
