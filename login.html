@@ -8,33 +8,50 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="assets/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="/assets/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/main.css">
 
     </head>
     <body>
         <div class="container">
             <div class="cover">
-            <img src="img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="150" class="icon">
+            <img src="/img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="150" class="icon">
             <h1 id="login">Login</h1>
             <br>
-            <form>
+            <form action="login.php" method="post">
+                <?php if (isset($_GET['error'])) { ?>
+                    <p style="float: left;">
+                        <?php echo $_GET['error']; ?>
+                    </p>
+                <?php } ?>
                 <label for="username">Username:</label> <br>
                 <input id="username" placeholder="something@gmail.com" type="text"> <br>
                 <label for="password">Password:</label> <br>
                 <input id="password" placeholder="**********" type="password"> <br>
                   <br>
                 <button id="forgotPassword">Forgot Password</button>
-                <button id="">Login</button> <br>
+                <button id="loginB" type="submit">Login</button> <br>
                 <hr>
                 <button id="createNewAccount">Create New Account</button>
             </form>
             </div>
         </div>
 
-        <script src="assets/bootstrap.min.js"></script>
-        <script src="assets/typed.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/assets/bootstrap.min.js"></script>
+        <script src="/assets/typed.js"></script>
+        <script src="/js/main.js"></script>
+        <script>
+            forgotPassword.addEventListener("click", loadForgotPass);
+            createNewAccount.addEventListener("click", loadCreateNew);
+
+            function loadForgotPass() {
+                alert("test")
+            }
+
+            function loadCreateNew() {
+                alert("test")
+            }
+        </script>
 
     </body>
 </html>
