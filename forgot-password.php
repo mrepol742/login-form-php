@@ -8,24 +8,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="/assets/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/main.css">
-
+        <link rel="stylesheet" href="assets/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+      
     </head>
     <body>
         <div class="container">
             <div class="cover">
-            <img src="/img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="150" class="icon">
+            <img src="img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="100" class="icon">
             <h1 id="login">Forgot Password</h1>
-            <br>
             <form action="login.php" method="post">
                 <?php if (isset($_GET['error'])) { ?>
                     <p style="float: left;">
                         <?php echo $_GET['error']; ?>
                     </p>
                 <?php } ?>
-                <label for="username">Username:</label> <br>
-                <input id="username" placeholder="something@gmail.com" type="text"> <br>
+                <label for="email">Email:</label> <br>
+                <input id="email" placeholder="something@gmail.com" type="email"> <br>
                 <label for="prepassword">Previous Password:</label> <br>
                 <input id="prepassword" placeholder="**********" type="password"> <br>
                 <label for="newpassword">New Password:</label> <br>
@@ -33,14 +32,14 @@
                   <br>
                 <button id="forgotPassword" name="forgotPassword">Forgot Password</button>
                 <hr>
-                <button id="loginB" type="submit">Sign In</button>
+                <button id="loginB" type="submit">Login</button>
             </form>
             </div>
         </div>
 
-        <script src="/assets/bootstrap.min.js"></script>
-        <script src="/assets/typed.js"></script>
-        <script src="/js/main.js"></script>
+        <script src="assets/bootstrap.min.js"></script>
+        <script src="assets/typed.js"></script>
+        <script src="js/main.js"></script>
 
     </body>
 </html>

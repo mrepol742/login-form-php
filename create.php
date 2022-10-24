@@ -1,12 +1,40 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+$fullname = $email = $password = $cpassword = "";
+$fullnameErr = $emailErr = $passwordErr = $cpasswordErr = "";
 
-    if (isset($_POST['createNewAccount'])) {
-        header('Location: create.php');
-    } else if (isset($_POST['forgotPassword'])) {
-        header('Location: forgot-password.php');
-    }
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+ if (empty($_POST["fullname"])) {
+	 $fullnameErr = "Fullname is required!";
+ } else {
+	 $fullname = $_POST["fullname"];
+ }
+ if (empty($_POST["email"])) {
+	 $emailErr = "Email is required!";
+ } else {
+	 $email = $_POST["email"];
+ }
+ if (empty($_POST["password"])) {
+	 $passwordErr = "Password is required!";
+ } else {
+	 $password = $_POST["password"];
+ }
+ if (empty($_POST["cpassword"])) {
+	 $cpasswordErr = "Confirm Password is required!";
+ } else {
+	 $cpassword = $_POST["cpassword"];
+ }
+ 
+ 
+ 
+ 
+ 
+ if (isset($_POST['loginB'])) {
+     header('Location: login.php');
+ }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -21,27 +49,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <link rel="stylesheet" href="assets/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
-        <title>Login</title>
+		    <title>Create Account</title>
+
     </head>
     <body>
         <div class="container">
             <div class="cover">
             <img src="img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="100" class="icon">
-            <h1 id="login">Login</h1>
+            <h1 id="login">Signup</h1>
             <form action="<?php htmlspecialchars('php_self'); ?>" method="post">
                 <?php if (isset($_GET['error'])) { ?>
                     <p style="float: left;">
                         <?php echo $_GET['error']; ?>
                     </p>
                 <?php } ?>
+                <label for="fullname">Fullname:</label> <br>
+                <input id="fullname" placeholder="" type="text"> <br>
                 <label for="email">Email:</label> <br>
                 <input id="email" placeholder="something@gmail.com" type="email"> <br>
                 <label for="password">Password:</label> <br>
                 <input id="password" placeholder="**********" type="password"> <br>
-                  <br>
-                <button id="forgotPassword" name="forgotPassword">Forgot Password</button>
-                <hr>
-                <button id="createNewAccount" name="createNewAccount">Create New Account</button>
+                <label for="cpassword">Confirm Password:</label> <br>
+                <input id="cpassword" placeholder="**********" type="password"> <br>
+            <br>
+                <button id="createNewAccount" type="submit">Create Account</button>
+               
+                <button id="loginB" name="loginB">Login</button>
             </form>
             </div>
         </div>
