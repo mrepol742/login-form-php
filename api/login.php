@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="assets/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/bootstrap-5.0.2css.min.css">
         <link rel="stylesheet" href="css/main.css">
         <title>Login</title>
     </head>
@@ -46,8 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
 
-        <script src="assets/bootstrap.min.js"></script>
-        <script src="assets/typed.js"></script>
+        <script src="assets/bootstrap-5.0.2js.min.js"></script>
         <script src="js/main.js"></script>
 
     </body>

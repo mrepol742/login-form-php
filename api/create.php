@@ -1,6 +1,6 @@
 <?php
-$fullname = $email = $password = $cpassword = "";
-$fullnameErr = $emailErr = $passwordErr = $cpasswordErr = "";
+$fullname = $gender = $email = $password = $cpassword = "";
+$fullnameErr = $genderErr = $emailErr = $passwordErr = $cpasswordErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -9,6 +9,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  } else {
 	 $fullname = $_POST["fullname"];
  }
+ if (empty($_POST["gender"])) {
+    $genderErr = "Gender is required!";
+} else {
+    $gender = $_POST["gender"];
+}
  if (empty($_POST["email"])) {
 	 $emailErr = "Email is required!";
  } else {
@@ -47,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="assets/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/bootstrap-5.0.2css.min.css">
         <link rel="stylesheet" href="css/main.css">
 		    <title>Create Account</title>
 
@@ -65,6 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php } ?>
                 <label for="fullname">Fullname:</label> <br>
                 <input id="fullname" placeholder="" type="text"> <br>
+                <label for="gender">Gender:</label> <br>
+                <input id="gender" placeholder="" type="text"> <br>
                 <label for="email">Email:</label> <br>
                 <input id="email" placeholder="something@gmail.com" type="email"> <br>
                 <label for="password">Password:</label> <br>
@@ -79,8 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
 
-        <script src="assets/bootstrap.min.js"></script>
-        <script src="assets/typed.js"></script>
+        <script src="assets/bootstrap-5.0.2js.min.js"></script>
         <script src="js/main.js"></script>
 
     </body>
