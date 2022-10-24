@@ -104,6 +104,7 @@ input {
 
 input::placeholder {
     color: #ffffff6e;
+    font-size: 14px;
 }
 
 input:hover, input:focus {

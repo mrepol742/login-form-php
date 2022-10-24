@@ -45,16 +45,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
-        <meta name="hostname" content="mrepol742.github.io">
-
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <meta name="theme-color" content="#ffffff">
         <link rel="stylesheet" href="assets/bootstrap-5.0.2css.min.css">
         <link rel="stylesheet" href="css/main.css">
-		    <title>Create Account</title>
+
+        <link rel="shortcut icon" href="img/bestlinkcollegeofthephilippines.png">
+        <link rel="apple-touch-icon" href="img/bestlinkcollegeofthephilippines.png">
+		<title>Create Account</title>
 
     </head>
     <body>
@@ -69,9 +70,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </p>
                 <?php } ?>
                 <label for="fullname">Fullname:</label> <br>
-                <input id="fullname" placeholder="" type="text"> <br>
+                <input id="fullname" placeholder="John Doe" type="text"> <br>
                 <label for="gender">Gender:</label> <br>
-                <input id="gender" placeholder="" type="text"> <br>
+                <input id="gender" placeholder="Male/Female" type="text"> <br>
                 <label for="email">Email:</label> <br>
                 <input id="email" placeholder="something@gmail.com" type="email"> <br>
                 <label for="password">Password:</label> <br>
