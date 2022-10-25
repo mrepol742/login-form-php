@@ -24,11 +24,11 @@
                         <?php echo $_GET['error']; ?>
                     </p>
                 <?php } ?>
-                <label for="email">Email:</label> <br>
+                <label class="input" for="email">Email:</label> <br>
                 <input id="email" placeholder="something@gmail.com" type="email"> <br>
-                <label for="prepassword">Previous Password:</label> <br>
+                <label class="input" for="prepassword">Previous Password:</label> <br>
                 <input id="prepassword" placeholder="**********" type="password"> <br>
-                <label for="newpassword">New Password:</label> <br>
+                <label class="input" for="newpassword">New Password:</label> <br>
                 <input id="newpassword" placeholder="**********" type="password"> <br>
                   <br>
                 <button id="forgotPassword" name="forgotPassword">Forgot Password</button>

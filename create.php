@@ -63,22 +63,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="container">
             <div class="cover">
             <img src="img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="100" class="icon">
-            <h1 id="login">Signup</h1>
+            <h1 id="login">Create Account</h1>
             <form action="<?php htmlspecialchars('php_self'); ?>" method="post">
                 <?php if (isset($_GET['error'])) { ?>
                     <p style="float: left;">
                         <?php echo $_GET['error']; ?>
                     </p>
                 <?php } ?>
-                <label for="fullname">Fullname:</label> <br>
+                <label class="input" for="fullname">Fullname:</label> <br>
                 <input id="fullname" placeholder="John Doe" type="text"> <br>
-                <label for="gender">Gender:</label> <br>
-                <input id="gender" placeholder="Male/Female" type="text"> <br>
-                <label for="email">Email:</label> <br>
+
+                <label class="gender">Gender:</label> <br>
+                
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" id="fmale" name="gender" value="Female">
+                <label for="fmale">Female</label>
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+          <br>
+
+         
+
+                <label class="input" for="email">Email:</label> <br>
                 <input id="email" placeholder="something@gmail.com" type="email"> <br>
-                <label for="password">Password:</label> <br>
+                <label class="input" for="password">Password:</label> <br>
                 <input id="password" placeholder="**********" type="password"> <br>
-                <label for="cpassword">Confirm Password:</label> <br>
+                <label class="input" for="cpassword">Confirm Password:</label> <br>
                 <input id="cpassword" placeholder="**********" type="password"> <br>
             <br>
                 <button id="createNewAccount" type="submit">Create Account</button>

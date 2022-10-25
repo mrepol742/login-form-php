@@ -86,7 +86,7 @@ a:hover {
 
 }
 
-input {
+input[type=text], input[type=email], input[type=password] {
     border-radius: 0%;
     border-style: solid;
     border-width: 1px;
@@ -107,20 +107,27 @@ input::placeholder {
     font-size: 14px;
 }
 
-input:hover, input:focus {
-    border-color: #4285f4;
-}
-
-input:hover {
+input[type=text]:hover, input[type=email]:hover, input[type=password]:hover {
+    border-color: #4285f4; 
     padding-left: 0px;
     padding-right: 0px;
 }
 
-label {
+input[type=radio] {
+    text-align: center;
+}
+
+
+.input {
     color: #ffffff;
     padding: 1px;
     float: left;
     margin-top: 3%;
+}
+
+.gender {
+    color: #ffffff;
+    float: left;
 }
 
 .icon {
