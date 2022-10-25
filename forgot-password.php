@@ -1,3 +1,14 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    if (isset($_POST['loginB'])) {
+        header('Location: login.php');
+    } else if (isset($_POST['createNewAccount'])) {
+        header('Location: create.php');
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,22 +29,23 @@
             <div class="cover">
             <img src="img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="100" class="icon">
             <h1 id="login">Forgot Password</h1>
-            <form action="login.php" method="post">
+            <form action="<?php htmlspecialchars('php_self'); ?>" method="post">
                 <?php if (isset($_GET['error'])) { ?>
                     <p style="float: left;">
                         <?php echo $_GET['error']; ?>
                     </p>
                 <?php } ?>
                 <label class="input" for="email">Email:</label> <br>
-                <input id="email" placeholder="something@gmail.com" type="email"> <br>
+                <input id="email" placeholder="something@gmail.com" type="email" name="email"><br>
                 <label class="input" for="prepassword">Previous Password:</label> <br>
-                <input id="prepassword" placeholder="**********" type="password"> <br>
+                <input id="prepassword" placeholder="**********" type="password" name="password"><br>
                 <label class="input" for="newpassword">New Password:</label> <br>
-                <input id="newpassword" placeholder="**********" type="password"> <br>
-                  <br>
-                <button id="forgotPassword" name="forgotPassword">Forgot Password</button>
+                <input id="newpassword" placeholder="**********" type="password" name="cpassword"><br>
+                <br>
+                <button id="forgotPassword" type="submit">Forgot Password</button>
                 <hr>
-                <button id="loginB" type="submit">Login</button>
+                <button id="createNewAccount" name="createNewAccount">Create Account</button>
+                <button id="loginB" name="loginB">Login</button>
             </form>
             </div>
         </div>

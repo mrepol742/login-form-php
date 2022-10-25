@@ -113,10 +113,15 @@ input[type=text]:hover, input[type=email]:hover, input[type=password]:hover {
     padding-right: 0px;
 }
 
-input[type=radio] {
-    text-align: center;
+input:autofill {
+    border: 3px solid #4285f4;
+    border-radius: 5px;
 }
 
+input:-webkit-autofill {
+    border: 3px solid #4285f4;
+    border-radius: 5px;
+}
 
 .input {
     color: #ffffff;
@@ -220,4 +225,9 @@ h1 {
     opacity: 0.2;
     transform: translate(-30%, -30%);
     border-radius: 50%;
+  }
+
+  hr {
+    margin-left: 20%;
+    margin-right: 20%;
   }

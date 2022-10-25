@@ -71,29 +71,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </p>
                 <?php } ?>
                 <label class="input" for="fullname">Fullname:</label> <br>
-                <input id="fullname" placeholder="John Doe" type="text"> <br>
-
+                <input id="fullname" placeholder="John Doe" type="text" name="name"> <br>
                 <label class="gender">Gender:</label> <br>
-                
                 <input type="radio" id="male" name="gender" value="Male">
                 <label for="male">Male</label>
                 <input type="radio" id="fmale" name="gender" value="Female">
                 <label for="fmale">Female</label>
                 <input type="radio" id="other" name="gender" value="Other">
-                <label for="other">Other</label>
-          <br>
-
-         
-
+                <label for="other">Other</label><br>
                 <label class="input" for="email">Email:</label> <br>
-                <input id="email" placeholder="something@gmail.com" type="email"> <br>
+                <input id="email" placeholder="something@gmail.com" type="email" name="email"> <br>
                 <label class="input" for="password">Password:</label> <br>
-                <input id="password" placeholder="**********" type="password"> <br>
+                <input id="password" placeholder="**********" type="password" name="password"> <br>
                 <label class="input" for="cpassword">Confirm Password:</label> <br>
-                <input id="cpassword" placeholder="**********" type="password"> <br>
-            <br>
+                <input id="cpassword" placeholder="**********" type="password" name="cpassword"> <br>
+                <br>
                 <button id="createNewAccount" type="submit">Create Account</button>
-               
                 <button id="loginB" name="loginB">Login</button>
             </form>
             </div>

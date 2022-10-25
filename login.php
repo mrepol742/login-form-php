@@ -36,12 +36,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </p>
                 <?php } ?>
                 <label class="input" for="email">Email:</label> <br>
-                <input id="email" placeholder="something@gmail.com" type="email"> <br>
+                <input id="email" placeholder="something@gmail.com" type="email" name="email"> <br>
                 <label class="input" for="password">Password:</label> <br>
-                <input id="password" placeholder="**********" type="password"> <br>
-                  <br>
+                <input id="password" placeholder="**********" type="password" name="password"> <br>
+                <br>
                 <button id="forgotPassword" name="forgotPassword">Forgot Password</button>
-                <button id="loginB" name="loginB">Login</button>
+                <button id="loginB" type="submit">Login</button>
                 <hr>
                 <button id="createNewAccount" name="createNewAccount">Create New Account</button>
             </form>
