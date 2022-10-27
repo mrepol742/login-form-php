@@ -1,6 +1,6 @@
-//document.body.style.background = "url('https://source.unsplash.com/720x1080') no-repeat fixed center";
-document.body.style.background = "url('img/bg.jpg') no-repeat fixed center";
-document.body.style.backgroundSize = "cover";
+let isDev = false;
+
+bg("");
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('../sw.js').then((reg) => {
@@ -8,6 +8,25 @@ if ('serviceWorker' in navigator) {
     }).catch((err) => {
       console.error('[ServiceWorker] failed: ', err)
     });
+}
+
+other.addEventListener("click", () => {
+  bg("lgbt");
+  male.addEventListener("click", () => {
+    bg("");
+  });
+  fmale.addEventListener("click", () => {
+    bg("");
+  });
+});
+
+function bg(url) {
+  if (isDev) {
+    document.body.style.background = "url('img/bg.jpg') no-repeat fixed center";
+  } else {
+    document.body.style.background = "url('https://source.unsplash.com/720x1080?" + url + "') no-repeat fixed center";
+  } 
+  document.body.style.backgroundSize = "cover";
 }
 
 const cursor = document.querySelector(".cursor");
