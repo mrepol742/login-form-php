@@ -1,6 +1,6 @@
 let isDev = false;
 
-bg("");
+bg("", false);
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('../sw.js').then((reg) => {
@@ -11,19 +11,22 @@ if ('serviceWorker' in navigator) {
 }
 
 other.addEventListener("click", () => {
-  bg("lgbt");
+  bg("lgbt", true);
   male.addEventListener("click", () => {
-    bg("");
+    bg("", false);
   });
   fmale.addEventListener("click", () => {
-    bg("");
+    bg("", false);
   });
 });
 
-function bg(url) {
-  if (isDev) {
-    document.body.style.background = "url('img/bg.jpg') no-repeat fixed center";
+function bg(url, isO) {
+  if (isDev && isO) {
+    document.body.style.background = "url('img/bg2.jpg') no-repeat fixed center";
+  } else if (isDev && !isO) {
+     document.body.style.background = "url('img/bg.jpg') no-repeat fixed center";
   } else {
+
     document.body.style.background = "url('https://source.unsplash.com/720x1080?" + url + "') no-repeat fixed center";
   } 
   document.body.style.backgroundSize = "cover";
