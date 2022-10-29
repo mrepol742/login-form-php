@@ -49,7 +49,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <script src="assets/bootstrap-5.0.2js.min.js"></script>
+        <script src="/assets/lozad.min.js"></script>
         <script src="js/main.js"></script>
+
 
     </body>
 </html>

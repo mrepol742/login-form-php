@@ -1,11 +1,11 @@
 <?php
-header("Location: create.php");
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        v<meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -18,10 +18,34 @@ header("Location: create.php");
         <title>Home - Hello World</title>
     </head>
     <body>
+
+
+        <div class="cursor"></div>
+        <div class="container">
+        <div class="cover">
+            <button>Login</button> <button>Create Account</button> <button>Forgot Password</button> <br><hr>
+            <div>
+             <h2 id="welc">Hello world</h2>
+</div>
+</div>
+        </div>
         
 
         <script src="assets/bootstrap-5.0.2js.min.js"></script>
+        <script src="/assets/lozad.min.js"></script>
         <script src="js/main.js"></script>
-
+        <script src="/assets/typed-2.0.12.min.js"></script>
+        <script>
+            var typed = new Typed('#welc', {
+            strings: [
+            "Welcome to my System"],
+            typeSpeed: 90,
+            startDelay: 30,
+            backSpeed: 20,
+            loop: true,
+            showCursor: false,
+            fadeOut: true
+        });
+        </script>
     </body>
 </html>
