@@ -1,6 +1,6 @@
 let isDev = false;
 
-bg("", false);
+bg("night", false);
 
 const observer = lozad();
 observer.observe();
@@ -16,10 +16,10 @@ if ('serviceWorker' in navigator) {
 other.addEventListener("click", () => {
   bg("lgbt", true);
   male.addEventListener("click", () => {
-    bg("", false);
+    bg("night", false);
   });
   fmale.addEventListener("click", () => {
-    bg("", false);
+    bg("night", false);
   });
 });
 
