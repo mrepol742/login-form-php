@@ -30,11 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <img src="img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="100" class="icon">
             <h1 id="login">Login</h1>
             <form action="<?php htmlspecialchars('php_self'); ?>" method="post">
-                <?php if (isset($_GET['error'])) { ?>
-                    <p style="float: left;">
-                        <?php echo $_GET['error']; ?>
-                    </p>
-                <?php } ?>
                 <label class="input" for="email">Email:</label> <br>
                 <input id="email" placeholder="something@gmail.com" type="email" name="email"> <br>
                 <label class="input" for="password">Password:</label> <br>

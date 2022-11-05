@@ -65,11 +65,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img src="img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="100" class="icon">
             <h1 id="login">Create Account</h1>
             <form action="<?php htmlspecialchars('php_self'); ?>" method="post">
-                <?php if (isset($_GET['error'])) { ?>
-                    <p style="float: left;">
-                        <?php echo $_GET['error']; ?>
-                    </p>
-                <?php } ?>
                 <label class="input" for="fullname">Fullname:</label> <br>
                 <input id="fullname" placeholder="John Doe" type="text" name="name"> <br>
                 <label class="gender">Gender:</label> <br>
