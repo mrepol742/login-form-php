@@ -1,6 +1,21 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $password = "";
+    $emailErr = $passwordErr = "";
 
+    
+     if (empty($_POST["email"])) {
+         $emailErr = "Email is required!";
+     } else {
+         $email = $_POST["email"];
+     }
+     if (empty($_POST["password"])) {
+         $passwordErr = "Password is required!";
+     } else {
+         $password = $_POST["password"];
+     }
+     
+    
     if (isset($_POST['createNewAccount'])) {
         header('Location: create.php');
     } else if (isset($_POST['forgotPassword'])) {
@@ -31,9 +46,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h1 id="login">Login</h1>
             <form action="<?php htmlspecialchars('php_self'); ?>" method="post">
                 <label class="input" for="email">Email:</label> <br>
-                <input id="email" placeholder="something@gmail.com" type="email" name="email"> <br>
+                <input id="email" placeholder="something@gmail.com" type="email" name="email">
+                <?php echo "<div class=\"err\">".$emailErr."</div>" ?> 
                 <label class="input" for="password">Password:</label> <br>
-                <input id="password" placeholder="**********" type="password" name="password"> <br>
+                <input id="password" placeholder="**********" type="password" name="password">
+                <?php echo "<div class=\"err\">".$passwordErr."</div>" ?> 
                 <br>
                 <button id="forgotPassword" name="forgotPassword">Forgot Password</button>
                 <button id="loginB" type="submit">Login</button>

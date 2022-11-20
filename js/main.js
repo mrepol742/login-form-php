@@ -1,4 +1,4 @@
-let isDev = false;
+let isDev = true;
 
 bg("night", false);
 
