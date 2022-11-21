@@ -1,9 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "password";
 
-$conn = new mysqli($servername, $username, $password);
+$conn = mysql_connect("localhost", " root@localhost", " root@localhost", "thecompany");
 
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
