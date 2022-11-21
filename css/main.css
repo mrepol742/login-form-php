@@ -125,6 +125,12 @@ input:-webkit-autofill {
     color: #de5246;
 }
 
+.success {
+    text-align: center;
+    font-size: 1em;
+    color: #428542;
+}
+
 .input {
     color: #ffffff;
     padding: 1px;

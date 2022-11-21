@@ -1,34 +1,48 @@
 <?php
-$fullname = $email = $password = $cpassword = "";
+include("connections.php");
+
+$fullname = $email = $password = $cpassword = $success = "";
 $fullnameErr = $emailErr = $passwordErr = $cpasswordErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
  if (empty($_POST["fullname"])) {
 	 $fullnameErr = "Fullname is required!";
+     $success = "";
  } else {
 	 $fullname = $_POST["fullname"];
  }
  if (empty($_POST["email"])) {
 	 $emailErr = "Email is required!";
+     $success = "";
  } else {
 	 $email = $_POST["email"];
  }
  if (empty($_POST["password"])) {
 	 $passwordErr = "Password is required!";
+     $success = "";
  } else {
 	 $password = $_POST["password"];
  }
  if (empty($_POST["cpassword"])) {
 	 $cpasswordErr = "Confirm Password is required!";
+     $success = "";
  } else {
 	 $cpassword = $_POST["cpassword"];
  }
  
-
- 
  if (isset($_POST['loginB'])) {
      header('Location: login.php');
+ }
+ if (isset($_POST['submit'])) {
+    if (!empty($fullname) && !empty($email) && !empty($password)) {
+    $sql = "INSERT INTO thecompany (fullname, email, pass)
+    VALUES ('" . $fullname . "', '" . $email . "', '" . $password . "')";
+    
+    if ($conn->query($sql) === TRUE) {
+        $success = "Successful.";
+    }
+}
  }
 }
 
@@ -57,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <img src="img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="100" class="icon">
             <h1 id="login">Create Account</h1>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                <?php echo "<div class=\"success\">".$success."</div>" ?>
                 <label class="input" for="fullname">Fullname:</label> <br>
                 <input id="fullname" placeholder="John Doe" type="text" name="fullname">
                 <?php echo "<div class=\"err\">".$fullnameErr."</div>" ?>
@@ -70,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input id="cpassword" placeholder="**********" type="password" name="cpassword">
                 <?php echo "<div class=\"err\">".$cpasswordErr."</div>" ?>
                 <br>
-                <button id="createNewAccount" type="submit">Create Account</button>
+                <button id="createNewAccount" type="submit" name="submit">Create Account</button>
                 <button id="loginB" name="loginB">Login</button>
             </form>
             </div>
