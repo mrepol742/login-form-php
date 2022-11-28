@@ -1,5 +1,14 @@
 <?php
 
+if (isset($_POST['login'])) {
+     header('Location: login.php');
+ }
+ if (isset($_POST['createA'])) {
+     header('Location: create.php');
+ }
+ if (isset($_POST['fPassword'])) {
+     header('Location: forgot-password.php');
+ }
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +32,10 @@
         <div class="cursor"></div>
         <div class="container">
         <div class="cover">
-            <button>Login</button> <button>Create Account</button> <button>Forgot Password</button> <br><hr>
-            <div>
+		<form method="post">
+            <button name="login">Login</button> <button name="createA">Create Account</button> <button name="fPassword">Forgot Password</button> <br><hr>
+            </form>
+			<div>
              <h2 id="welc">Hello world</h2>
 </div>
 </div>
@@ -32,9 +43,9 @@
         
 
         <script src="assets/bootstrap-5.0.2js.min.js"></script>
-        <script src="/assets/lozad.min.js"></script>
+        <script src="assets/lozad.min.js"></script>
         <script src="js/main.js"></script>
-        <script src="/assets/typed-2.0.12.min.js"></script>
+        <script src="assets/typed-2.0.12.min.js"></script>
         <script>
             var typed = new Typed('#welc', {
             strings: [

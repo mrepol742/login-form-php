@@ -6,7 +6,6 @@
     src: url("../assets/MavenPro.woff2") format('woff2');
 }
 
-
 * {
     font-family: 'Maven Pro', sans-serif;
     margin: 0;
@@ -125,6 +124,12 @@ input:-webkit-autofill {
     color: #de5246;
 }
 
+.success {
+    text-align: center;
+    font-size: 1em;
+    color: #428542;
+}
+
 .input {
     color: #ffffff;
     padding: 1px;
@@ -160,7 +165,7 @@ button {
     }
 
     .container {
-        width: 75%;
+        width: 65%;
     }
 }
 

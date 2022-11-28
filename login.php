@@ -1,9 +1,11 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $password = "";
-    $emailErr = $passwordErr = "";
+include("connections.php");
 
-    
+$email = $password = $success = "";
+$emailErr = $passwordErr = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+ 
      if (empty($_POST["email"])) {
          $emailErr = "Email is required!";
      } else {
@@ -20,7 +22,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: create.php');
     } else if (isset($_POST['forgotPassword'])) {
         header('Location: forgot-password.php');
-    }
+    } 
+	else if (isset($_POST['submit'])) {
+		   if (!empty($email) && !empty($password)) {
+	   $sql = "SELECT * FROM thecompany";
+      $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+		    while($row = $result->fetch_assoc()) {
+               if ($email == $row["email"] && $password == $row["pass"]) {
+				   $success = "";
+			     	 header('Location: index.php');
+			   } else {
+				    $success = "Failed to login!";
+			   }
+             }
+        }
+		   }
+	 }
 }
 ?>
 
@@ -45,6 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <img src="img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="100" class="icon">
             <h1 id="login">Login</h1>
             <form action="<?php htmlspecialchars('php_self'); ?>" method="post">
+			<?php echo "<div class=\"err\">".$success."</div>" ?>
                 <label class="input" for="email">Email:</label> <br>
                 <input id="email" placeholder="something@gmail.com" type="email" name="email">
                 <?php echo "<div class=\"err\">".$emailErr."</div>" ?> 
@@ -53,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php echo "<div class=\"err\">".$passwordErr."</div>" ?> 
                 <br>
                 <button id="forgotPassword" name="forgotPassword">Forgot Password</button>
-                <button id="loginB" type="submit">Login</button>
+                <button id="loginB" type="submit" name="submit">Login</button>
                 <hr>
                 <button id="createNewAccount" name="createNewAccount">Create New Account</button>
             </form>
@@ -61,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <script src="assets/bootstrap-5.0.2js.min.js"></script>
-        <script src="/assets/lozad.min.js"></script>
+        <script src="assets/lozad.min.js"></script>
         <script src="js/main.js"></script>
 
 
