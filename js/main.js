@@ -6,33 +6,26 @@ const observer = lozad();
 observer.observe();
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('..//sw.js').then((reg) => {
+    navigator.serviceWorker.register('../login/sw.js').then((reg) => {
       console.log('[ServiceWorker] Registered');
     }).catch((err) => {
       console.error('[ServiceWorker] failed: ', err)
     });
 }
 
-other.addEventListener("click", () => {
-  bg("lgbt", true);
-  male.addEventListener("click", () => {
-    bg("night", false);
-  });
-  fmale.addEventListener("click", () => {
-    bg("night", false);
-  });
-});
-
 function bg(url, isO) {
   if (isDev && isO) {
-    document.body.style.background = "url('img/bg2.jpg') no-repeat fixed center";
+    document.body.style.background = "url('img/bg" + getRndInteger(1, 13) + ".jpg') no-repeat fixed center";
   } else if (isDev && !isO) {
-     document.body.style.background = "url('img/bg.jpg') no-repeat fixed center";
+     document.body.style.background = "url('img/bg" + getRndInteger(1, 13) + ".jpg') no-repeat fixed center";
   } else {
-
     document.body.style.background = "url('https://source.unsplash.com/720x1080?" + url + "') no-repeat fixed center";
   } 
   document.body.style.backgroundSize = "cover";
+}
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
 }
 
 const cursor = document.querySelector(".cursor");
