@@ -1,6 +1,9 @@
 <?php
 include("connections.php");
 
+$email = $password = $cpassword = "";
+$emailErr = $passwordErr = $cpasswordErr = "";
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $email = $password = $cpassword  = "";

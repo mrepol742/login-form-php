@@ -1,12 +1,5 @@
 <?php
 include("connections.php");
-<<<<<<< HEAD
-=======
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $password = "";
-    $emailErr = $passwordErr = "";
->>>>>>> 91f1b97daf9032475848637deb76c5dfa3c7bd4f
 
 $email = $password = $success = "";
 $emailErr = $passwordErr = "";
