@@ -58,17 +58,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <link rel="stylesheet" href="assets/bootstrap-5.0.2css.min.css">
         <link rel="stylesheet" href="css/main.css">
 
-        <link rel="shortcut icon" href="img/bestlinkcollegeofthephilippines.png">
-        <link rel="apple-touch-icon" href="img/bestlinkcollegeofthephilippines.png">
+        <link rel="shortcut icon" href="img/favicon.png">
+        <link rel="apple-touch-icon" href="img/favicon.png">
         <title>Login</title>
     </head>
     <body>
         <div class="container">
             <div class="cover">
-            <img src="img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="100" class="icon">
+            <img src="img/favicon.png" alt="Melvin Jones Repol" width="100" class="icon">
             <h1 id="login">Login</h1>
             <form action="<?php htmlspecialchars('php_self'); ?>" method="post">
-			<?php echo "<div class=\"err\">".$success."</div>" ?>
                 <label class="input" for="email">Email:</label> <br>
                 <input id="email" placeholder="something@gmail.com" type="email" name="email">
                 <?php echo "<div class=\"err\">".$emailErr."</div>" ?> 

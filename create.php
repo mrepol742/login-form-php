@@ -62,15 +62,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <link rel="stylesheet" href="assets/bootstrap-5.0.2css.min.css">
         <link rel="stylesheet" href="css/main.css">
 
-        <link rel="shortcut icon" href="img/bestlinkcollegeofthephilippines.png">
-        <link rel="apple-touch-icon" href="img/bestlinkcollegeofthephilippines.png">
+        <link rel="shortcut icon" href="img/favicon.png">
+        <link rel="apple-touch-icon" href="img/favicon.png">
 		<title>Create Account</title>
     </head>
     <body>
         <div class="cursor"></div>
         <div class="container">
             <div class="cover">
-            <img src="img/bestlinkcollegeofthephilippines.png" alt="Bestlink College of the Philippines" width="100" class="icon">
+            <img src="img/favicon.png" alt="Melvin Jones Repol" width="100" class="icon">
             <h1 id="login">Create Account</h1>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <label class="input" for="fullname">Fullname:</label> <br>

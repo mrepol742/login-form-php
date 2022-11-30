@@ -14,7 +14,7 @@ if (isset($_POST['login'])) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        v<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,8 +22,8 @@ if (isset($_POST['login'])) {
         <link rel="stylesheet" href="assets/bootstrap-5.0.2css.min.css">
         <link rel="stylesheet" href="css/main.css">
 
-        <link rel="shortcut icon" href="img/bestlinkcollegeofthephilippines.png">
-        <link rel="apple-touch-icon" href="img/bestlinkcollegeofthephilippines.png">
+        <link rel="shortcut icon" href="img/favicon.png">
+        <link rel="apple-touch-icon" href="img/favicon.png">
         <title>Home - Hello World</title>
     </head>
     <body>
