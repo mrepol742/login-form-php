@@ -13,5 +13,5 @@
 "file:/github/workspace/assets/bootstrap-5.0.2css.min.css":6.27723-6.27727: error: CSS: "color-adjust": Property "color-adjust" doesn't exist.
 "file:/github/workspace/assets/bootstrap-5.0.2css.min.css":6.73532-6.73535: error: CSS: "overflow-anchor": Property "overflow-anchor" doesn't exist.
 "file:/github/workspace/assets/bootstrap-5.0.2css.min.css":0.0-0.0: error: CSS: The value "break-word" is deprecated
-"file:/github/workspace/css/main.css":83.30-83.30: error: CSS: "backdrop-filter": Property "backdrop-filter" doesn't exist.
-"file:/github/workspace/css/main.css":114.7-114.14: error: CSS: Unknown pseudo-element or pseudo-class ":autofill"
+"file:/github/workspace/css/main.css":82.30-82.30: error: CSS: "backdrop-filter": Property "backdrop-filter" doesn't exist.
+"file:/github/workspace/css/main.css":113.7-113.14: error: CSS: Unknown pseudo-element or pseudo-class ":autofill"
