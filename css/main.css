@@ -111,12 +111,12 @@ input:hover {
 }
 
 input:autofill {
-    border: 4px solid #4285f4;
+    border: 2px solid #4285f4;
     border-radius: 5px;
 }
 
 input:-webkit-autofill {
-    border: 4px solid #4285f4;
+    border: 2px solid #4285f4;
     border-radius: 5px;
 }
 

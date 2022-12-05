@@ -27,8 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (isset($_POST['loginB'])) {
         header('Location: login.php');
-    }
-    if (isset($_POST['submit'])) {
+    } else if (isset($_POST['submit'])) {
 	    $chemail = mysqli_query($conn, "SELECT * FROM thecompany WHERE email= '" . $email . "'");
 	    $check = mysqli_num_rows($chemail);
         if ($check > 0) {

@@ -24,6 +24,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: login.php');
     } else if (isset($_POST['createNewAccount'])) {
         header('Location: create.php');
+    } else if (isset($_POST['submit'])) {
+        if (!empty($email) && !empty($password) && !empty($cpassword)) {
+            $check_email = mysqli_query($conn, "SELECT * FROM thecompany where email = '$email'");
+            if (mysqli_num_rows($check_email) > 0) {
+                while ($row = mysqli_fetch_assoc($check_email)) {
+                    $db_id = $row["id"];
+                    $db_password = $row["pass"];
+                    $db_account_type = $row["account_type"];
+                    if ($db_password == $password) {
+                        $sql = "UPDATE thecompany SET pass = '$cpassword' WHERE id = '$db_id'";
+				        if ($conn->query($sql)) {
+                            echo "<div class=\"alert alert-success\" role=\"alert\">Successful</div>";
+                        }
+                    } else {
+                        echo "<div class=\"alert alert-danger\" role=\"alert\">Password is incorrect.</div>";
+                    }
+                }
+            } else {
+                echo "<div class=\"alert alert-danger\" role=\"alert\">Email is not registered.</div>";
+            }
+		}
     }
 }
 ?>
@@ -59,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input id="newpassword" placeholder="**********" type="password" name="cpassword">
                 <?php echo "<div class=\"err\">".$cpasswordErr."</div>" ?> 
                 <br>
-                <button id="forgotPassword" type="submit">Forgot Password</button>
+                <button id="forgotPassword" type="submit" name="submit">Forgot Password</button>
                 <hr>
                 <button id="createNewAccount" name="createNewAccount">Create Account</button>
                 <button id="loginB" name="loginB">Login</button>
