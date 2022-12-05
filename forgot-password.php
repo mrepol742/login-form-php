@@ -5,28 +5,21 @@ $email = $password = $cpassword = "";
 $emailErr = $passwordErr = $cpasswordErr = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $email = $password = $cpassword  = "";
-    $emailErr = $passwordErr = $cpasswordErr = "";
-
-    
-     if (empty($_POST["email"])) {
-         $emailErr = "Email is required!";
-     } else {
-         $email = $_POST["email"];
-     }
-     if (empty($_POST["password"])) {
-         $passwordErr = "Password is required!";
-     } else {
-         $password = $_POST["password"];
-     }
-     if (empty($_POST["cpassword"])) {
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required!";
+    } else {
+        $email = $_POST["email"];
+    }
+    if (empty($_POST["password"])) {
+        $passwordErr = "Password is required!";
+    } else {
+        $password = $_POST["password"];
+    }
+    if (empty($_POST["cpassword"])) {
         $cpasswordErr = "Confirm Password is required!";
     } else {
         $cpassword = $_POST["cpassword"];
     }
-     
-
     if (isset($_POST['loginB'])) {
         header('Location: login.php');
     } else if (isset($_POST['createNewAccount'])) {

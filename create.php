@@ -5,48 +5,43 @@ $fullname = $email = $password = $cpassword = "";
 $fullnameErr = $emailErr = $passwordErr = $cpasswordErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
- if (empty($_POST["fullname"])) {
-	 $fullnameErr = "Fullname is required!";
- } else {
-	 $fullname = $_POST["fullname"];
- }
- if (empty($_POST["email"])) {
-	 $emailErr = "Email is required!";
- } else {
-	 $email = $_POST["email"];
- }
- if (empty($_POST["password"])) {
-	 $passwordErr = "Password is required!";
- } else {
-	 $password = $_POST["password"];
- }
- if (empty($_POST["cpassword"])) {
-	 $cpasswordErr = "Confirm Password is required!";
- } else {
-	 $cpassword = $_POST["cpassword"];
- }
- 
- if (isset($_POST['loginB'])) {
-     header('Location: login.php');
- }
- if (isset($_POST['submit'])) {
-	$chemail = mysqli_query($conn, "SELECT * FROM thecompany WHERE email= '" . $email . "'");
-	$check = mysqli_num_rows($chemail);
-	if ($check > 0) {
-		$emailErr = "Email is already Registered";
-	} else {
-    if (!empty($fullname) && !empty($email) && !empty($password)) {
-    $sql = "INSERT INTO thecompany (fullname, email, pass, account_type)
-    VALUES ('" . $fullname . "', '" . $email . "', '" . $password . "', '" . 2 . "')";
-    
-    if ($conn->query($sql) === TRUE) {
-        echo "<span class=\"success\">Successful.</span>";
+    if (empty($_POST["fullname"])) {
+	    $fullnameErr = "Fullname is required!";
+    } else {
+	    $fullname = $_POST["fullname"];
     }
+    if (empty($_POST["email"])) {
+	    $emailErr = "Email is required!";
+    } else {
+	    $email = $_POST["email"];
     }
-	}
- }
- 
+    if (empty($_POST["password"])) {
+	    $passwordErr = "Password is required!";
+    } else {
+	    $password = $_POST["password"];
+    }
+    if (empty($_POST["cpassword"])) {
+	    $cpasswordErr = "Confirm Password is required!";
+    } else {
+	    $cpassword = $_POST["cpassword"];
+    }
+    if (isset($_POST['loginB'])) {
+        header('Location: login.php');
+    }
+    if (isset($_POST['submit'])) {
+	    $chemail = mysqli_query($conn, "SELECT * FROM thecompany WHERE email= '" . $email . "'");
+	    $check = mysqli_num_rows($chemail);
+        if ($check > 0) {
+	    	$emailErr = "Email is already Registered";
+	    } else {
+            if (!empty($fullname) && !empty($email) && !empty($password)) {
+                $sql = "INSERT INTO thecompany (fullname, email, pass, account_type) VALUES ('" . $fullname . "', '" . $email . "', '" . $password . "', '" . 2 . "')";
+                if ($conn->query($sql) === TRUE) {
+                    echo "<div class=\"alert alert-success\" role=\"alert\">Successful</div>";
+                }
+            }
+	    }
+    }
 }
 
 

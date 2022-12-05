@@ -5,7 +5,6 @@ $email = $password = $success = "";
 $emailErr = $passwordErr = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
- 
     if (empty($_POST["email"])) {
         $emailErr = "Email is required!";
     } else {
@@ -16,32 +15,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $password = $_POST["password"];
     }
-    
     if (isset($_POST['createNewAccount'])) {
         header('Location: create.php');
     } else if (isset($_POST['forgotPassword'])) {
         header('Location: forgot-password.php');
     } else if (isset($_POST['submit'])) {
 		if (!empty($email) && !empty($password)) {
-	        $sql = "SELECT * FROM thecompany";
-            $result = $conn->query($sql);
-            if ($result-> num_rows > 0) {
-		        while($row = $result->fetch_assoc()) {
-                   if ($email == $row["email"]) {
-			     	    if ($password == $row["pass"]) {
-							if ($row["account_type"] == "1"){
-								echo "<script>window.location.href='admin';</script>";
-							} else {
-								echo "<script>window.location.href='user';</script>";
-							}
-						} else {
-							echo "Password is incorrect";
-						}
-			        } else {
-				       echo "Email is not registered";
-			        }
+            $check_email = mysqli_query($conn, "SELECT * FROM thecompany where email = '$email'");
+            if (mysqli_num_rows($check_email) > 0) {
+                while ($row = mysqli_fetch_assoc($check_email)) {
+                    $db_password = $row["pass"];
+                    $db_account_type = $row["account_type"];
+                    if ($db_password == $password) {
+                        if ($db_account_type == "1"){
+                            echo "<script>window.location.href='admin';</script>";
+                        } else {
+                            echo "<script>window.location.href='user';</script>";
+                        }
+                    } else {
+                        echo "<div class=\"alert alert-danger\" role=\"alert\">Password is incorrect.</div>";
+                    }
                 }
-            }   
+            } else {
+                echo "<div class=\"alert alert-danger\" role=\"alert\">Email is not registered.</div>";
+            }
 		}
 	}
 }

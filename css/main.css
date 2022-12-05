@@ -126,11 +126,24 @@ input:-webkit-autofill {
     color: #de5246;
 }
 
-.success {
-	position: sticky;
+.alert {
+	position: absolute;
+    z-index: 99999;
     text-align: center;
+    margin-top: -40%;
+    width: 30%;
     font-size: 1em;
-    color: #428542;
+    border: none;
+    box-shadow: 0 0 6em rgba(0, 0, 0, .9);
+    color: #fff;
+}
+
+.alert-danger {
+    background-color: rgba(207, 77, 77, 0.2);
+}
+
+.alert-success {
+    background-color: rgba(123, 77, 207, 0.2);
 }
 
 .input {
