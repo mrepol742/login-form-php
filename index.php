@@ -43,7 +43,6 @@ if (isset($_POST['login'])) {
         
 
         <script src="assets/bootstrap-5.0.2js.min.js"></script>
-        <script src="assets/lozad.min.js"></script>
         <script src="js/main.js"></script>
         <script src="assets/typed-2.0.12.min.js"></script>
         <script>
