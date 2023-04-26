@@ -2,11 +2,8 @@ let isDev = true;
 
 bg("night", false);
 
-const observer = lozad();
-observer.observe();
-
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('../login/sw.js').then((reg) => {
+    navigator.serviceWorker.register('../login-crud-system-php/sw.js').then((reg) => {
       console.log('[ServiceWorker] Registered');
     }).catch((err) => {
       console.error('[ServiceWorker] failed: ', err)

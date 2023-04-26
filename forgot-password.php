@@ -65,6 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <title>Forgot Password</title>
     </head>
     <body>
+    <div class="cursor"></div>
         <div class="container">
             <div class="cover">
             <img src="img/favicon.png" alt="Melvin Jones Repol" width="100" class="icon">
