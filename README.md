@@ -1,11 +1,5 @@
 # login-crud-system-php
-A CRUD system project to be submitted for a college subject requirements
-https://mrepol742.github.io#projects
+A Project for Web Dev Subject
 
-## Clone
-Open the htdocs folder (xampp) in terminal
-git clone https://github.com/mrepol742/login-crud-system-php
-
-## Start
-Open the web browser and enter this url
-localhost/login-crud-system-php
+<img src="demo.png">
+<img src="demo0.png">
